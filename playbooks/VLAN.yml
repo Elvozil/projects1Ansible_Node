@@ -1,0 +1,32 @@
+---
+- name: Configure VLANs on Site 1 Switches
+  hosts: switches
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Create VLANs 100, 200, 300, 400
+      ios_vlans:
+        state: merged
+        config:
+          - name: DATA
+            vlan_id: 100
+          - name: VOICE
+            vlan_id: 200
+          - name: IPTV
+            vlan_id: 300
+          - name: APSS
+            vlan_id: 400
+      register: vlan_output
+
+    - name: Save configuration
+      ios_command:
+        commands: write memory
+      when: vlan_output.changed
+
+    - name: show vlan brief
+      ios_command:
+        commands: show vlan brief
+      register: output
+
+    - include: print_output.yml

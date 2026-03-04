@@ -1,0 +1,5 @@
+
+vlans:
+  30: "GEMon"
+  40: "MCMon"
+  50: "IXMon"

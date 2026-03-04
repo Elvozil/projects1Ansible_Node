@@ -1,0 +1,22 @@
+---
+- name: Safe ACL 88 Replacement
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+
+    - name: Backup running config locally
+      ios_config:
+        backup: yes
+
+    - name: Configure new ACL 88
+      ios_config:
+        lines:
+          - access-list 88 permit 10.10.10.0 0.0.0.255
+          - access-list 88 deny 192.168.1.0 0.0.0.255
+          - access-list 88 permit any
+
+    - name: Save configuration if modified
+      ios_config:
+        save_when: modified
