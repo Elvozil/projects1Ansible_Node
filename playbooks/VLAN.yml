@@ -5,7 +5,7 @@
   connection: network_cli
 
   tasks:
-    - name: Create VLANs 100, 200, 300, 400
+    - name: Create VLANs 100, 200, 300, 400,500
       ios_vlans:
         state: merged
         config:
@@ -19,7 +19,7 @@
             vlan_id: 400
       register: vlan_output
 
-    - name: Save configuration
+    - name: Save configurations
       ios_command:
         commands: write memory
       when: vlan_output.changed
