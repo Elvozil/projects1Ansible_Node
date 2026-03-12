@@ -1,0 +1,11 @@
+Network devices
+  Routers:
+    CRT1
+    CRT2
+    CRT3
+    CRT4
+  Switches:
+    DSW1
+    DSW2
+    DSW4
+    DSW4
