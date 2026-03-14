@@ -9,3 +9,10 @@ Network devices
     DSW2
     DSW4
     DSW4
+Firewalls:
+   PAF1
+   PAE2
+   FTD1
+   FTD2
+   FG1
+   FG2
