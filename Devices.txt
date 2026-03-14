@@ -14,3 +14,4 @@ Network devices
    PAE2
    FTD1
    FTD2
+   FG4
