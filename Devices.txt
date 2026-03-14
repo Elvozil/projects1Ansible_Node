@@ -12,5 +12,5 @@ Network devices
   Firewalls:
    PAF1
    PAE2
-    FTD1
-    FTD2
+   FTD1
+   FTD2
